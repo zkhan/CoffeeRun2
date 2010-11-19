@@ -1,6 +1,6 @@
-*/bin 
-*/obj 
-*.user 
-*.suo 
-_ReSharper.* 
+*/bin
+*/obj
+*.user
+*.suo
+_ReSharper.*
 *.sln.cache
