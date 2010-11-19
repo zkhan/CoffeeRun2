@@ -8,7 +8,7 @@ namespace Enzo.CoffeeRun2.Web.Controllers
     public class HomeController : Controller
     {
         private readonly CoffeeRequestRepository _requestRepository;
-
+        
         public HomeController(CoffeeRequestRepository requestRepository)
         {
             _requestRepository = requestRepository;
