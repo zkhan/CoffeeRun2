@@ -1,7 +1,28 @@
-﻿@{
+﻿@using Enzo.CoffeeRun2.Web.Helpers
+@using Enzo.CoffeeRun2.Web.Models
+@model Enzo.CoffeeRun2.Web.Models.CoffeeRequest
+
+@{
     View.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Enzo Coffee Run v2</h2>
+<h2>Index</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Fields</legend>
+        <p>
+            @Html.EnumDropDownList("Coffee", Coffee.Latte)
+        </p>
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
 
