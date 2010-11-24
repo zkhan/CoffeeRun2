@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Threading;
-using System.Web;
+﻿using System.Reflection;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Enzo.CoffeeRun2.Web.Repositories;
 using Ninject;
 using Ninject.Web.Mvc;
 
-namespace CoffeeRun2
+namespace Enzo.CoffeeRun2.Web
 {
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
     // visit http://go.microsoft.com/?LinkId=9394801
@@ -46,6 +42,7 @@ namespace CoffeeRun2
         {
             var kernel = new StandardKernel();
             kernel.Load(Assembly.GetExecutingAssembly());
+            kernel.Rebind<CoffeeRequestRepository>().ToConstant(new CoffeeRequestRepository()).InSingletonScope();
             return kernel;
         }
     }
